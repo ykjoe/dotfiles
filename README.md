@@ -23,7 +23,7 @@ git clone https://github.com/romkatv/powerlevel10k.git
 ```
 3. 克隆本仓库
 ```bash
-
+git clone https://github.com/ykjoe/dotfiles.git
 ```
 4. 应用配置文件
 ```bash
