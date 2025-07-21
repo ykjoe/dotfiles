@@ -13,19 +13,23 @@
 | neovim | 0.11.3 | 编辑器 | `.config/nvim/` |
 
 ## 安装
-1. 安装相关软件
+1. 安装相关依赖
+```bash
+sudo apt install ripgrep
+```
+2. 安装相关软件
 ```bash
 sudo apt install zsh tmux vim neovim
 ```
-2. 下载zsh外观仓库
+3. 下载zsh外观仓库
 ```bash
 git clone https://github.com/romkatv/powerlevel10k.git
 ```
-3. 克隆本仓库
+4. 克隆本仓库
 ```bash
 git clone https://github.com/ykjoe/dotfiles.git
 ```
-4. 应用配置文件
+5. 应用配置文件
 ```bash
 bash ./apply_all.sh
 ```

@@ -70,7 +70,10 @@ return require('packer').startup(function(use)
   -- 文件检索
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',  -- 文件检索
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'BurntSushi/ripgrep'},
+    }
   }
 
   if packer_bootstrap then
