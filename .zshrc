@@ -79,7 +79,7 @@ alias rm='trash'
 # Something settings for other software
 # tmux
 if [[ -z "$TMUX" ]] ;then
-    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+    ID="$(tmux ls 2>/dev/null | grep -vm1 attached | cut -d: -f1)" # get the id of a detached session
     if [[ -z "$ID" ]] ;then # if not available create a new one
         tmux new-session
     else
