@@ -59,6 +59,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    alias make='colormake'
 fi
 
 # colored GCC warnings and errors
@@ -75,17 +77,3 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Add "rm" alias for trash-cli
 alias rm='trash'
-
-# Something settings for other software
-# tmux
-if [[ -z "$TMUX" ]] ;then
-    ID="$(tmux ls 2>/dev/null | grep -vm1 attached | cut -d: -f1)" # get the id of a detached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        tmux new-session
-    else
-        tmux attach-session -t "$ID" # if available attach to it
-    fi
-fi
-
-# newvim
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

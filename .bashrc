@@ -116,3 +116,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# tmux
+if [[ -z "$TMUX" && -z "$VSCODE_IPC_HOOK_CLI" && "$TERM_PROGRAM" != "vscode" ]]; then
+    ID="$(tmux ls 2>/dev/null | grep -vm1 attached | cut -d: -f1)" # get the id of a detached session
+    if [[ -z "$ID" ]]; then
+        tmux new-session
+    else
+        tmux attach-session -t "$ID"
+    fi
+fi
+
+# zsh
+if [ -x "$(command -v zsh)" ]; then
+    export SHELL=$(command -v zsh)
+    exec zsh -l
+fi
