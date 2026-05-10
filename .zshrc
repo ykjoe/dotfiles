@@ -10,6 +10,9 @@ source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# include .profile for PATH and other environment variables
+[[ -f ~/.profile ]] && . ~/.profile
+
 
 ## Something similar to the .bashrc snippet above
 # set a fancy prompt (non-color, unless we know we "want" color)
